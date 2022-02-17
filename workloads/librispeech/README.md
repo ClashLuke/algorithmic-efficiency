@@ -7,18 +7,12 @@ and evaluate it on Librispeech test clean dataset. We get Character Error Rate
 (1.00 step/second).
 
 ## 2. Download and preprocess dataset
-
-```
-mkdir data_dir
-cd data_dir
-
-download_data.sh
-
-cd ..
-mkdir work_dir
-cd work_dir
-
-python prepare_data.py data_dir/LibriSpeech
+You'll need `sndfile`, which can be installed using `apt install libsndfile-dev`. Afterwards, run the following:
+```BASH
+mkdir data_dir && cd data_dir
+bash ../download_data.sh
+mkdir ../work_dir && cd ../work_dir
+python3 prepare_data.py ../data_dir/LibriSpeech jax
 ```
 
 The raw dataset is under `data_dir` and the preprocessed dataset is under
